@@ -1,0 +1,11 @@
+#Kadane's Algorithm (Maximum Sum of the List Element)
+l1=[-2, -3, 4, -1, -2, 1, 5, -3]
+max=l1[0]
+sum=0
+for i in l1:
+    sum=sum+i
+    if sum<0:
+        sum=0
+    if sum>max and sum>0:
+        max=sum
+print(max)
