@@ -16,8 +16,10 @@ class Queue:
         if self.front==self.rear:
             print("Queue is Underflow")
         else:
-           self.queue.pop(0)
-           rear-=1
+            temp=self.queue[0]
+            self.queue.pop(0)
+            self.rear-=1
+            return temp
 
             
             
@@ -31,20 +33,43 @@ class Queue:
             print("Queue Element = ",self.queue[i])
         return
 
-if __name__=="__main__":
-    q1=Queue(5)
-    q2=Queue(10)
-    q1.Enqueue(5)
-    q1.Enqueue(15)
-    q1.Enqueue(25)
-    q1.Enqueue(15) 
-    q1.Enqueue(55)
 
-    q1.Display()
-    q1.Dequeue()
-    
+class stack:
+    def __init__(self):
+        self.q1=Queue(10)
+        self.q2=Queue(10)
+        self.size=0
+    def Push(self,data):
+        self.q1.Enqueue(data)
+        self.size+=1
+    def Pop(self):
         
-    q1.Display()
-    print("Front")
-    q1.Front()
+        for i in range(self.size-1):
+            temp=self.q1.Dequeue()
+            self.q2.Enqueue(temp)
+        temp=self.q1.Dequeue()
+
+        for i in range(self.size-1):
+            temp=self.q2.Dequeue()
+            self.q1.Enqueue(temp)
+
+        self.size-=1
+    def display(self):
+        self.q1.Display()
+        return
+            
+        
+            
+        
+
+if __name__=="__main__":
+    s1=stack()
+    s1.Push(5)
+    s1.Push(15)
+    s1.Push(25)
+    s1.Push(35)
+    s1.Push(45)
+    s1.Pop()
+    s1.Push(55)
+    s1.display()
             
