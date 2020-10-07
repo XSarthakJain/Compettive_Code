@@ -1,4 +1,7 @@
 #Bubble Sort
+'''Worst Time Complexity & Average = O(n2)
+Best Time Complexity=O(n)
+Auxilary Space Complexity=O(1)'''
 n=list(map(int,input().split()))
 
 for i in range(len(n)):

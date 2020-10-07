@@ -1,4 +1,9 @@
 #Insertion Sort
+'''
+Space Complexity:O(1)
+Worst Complexity:O(n2)
+Best Case:Omege(n)
+'''
 n=list(map(int,input().split()))
 
 for i in range(1,len(n)):
