@@ -1,10 +1,15 @@
 #include<stdio.h>
-#include<conio.h>
-int main(){
+#include<math.h>
+int main(int argc, char const *argv[])
+{
+    
     float l,b;
-    printf("\nEnter Length of 2 Side of triangle");
-    scanf("%d %d",&l,&b);
-    printf("Length of the Hypotenous = ",sqrt((l*l)+(b*b)));
-    getch();
+    
+    l=atof(argv[1]);
+    b=atof(argv[2]);
+    
+    printf("Length of the Hypotenous = %f",sqrt((l*l)+(b*b)));
+   
+   
     return 0;
 }
