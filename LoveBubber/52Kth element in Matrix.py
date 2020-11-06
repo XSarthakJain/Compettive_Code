@@ -1,4 +1,4 @@
-#Kth element in Matrix
+#Kth element in Matrix  https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1#
 n=int(input())
 mat=[]
 for i in range(n):
