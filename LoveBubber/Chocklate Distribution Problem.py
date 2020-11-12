@@ -13,3 +13,4 @@ for _ in range(int(input())):
             result=min(result,A[i]-A[current])
             current+=1
     print(result)
+ 
