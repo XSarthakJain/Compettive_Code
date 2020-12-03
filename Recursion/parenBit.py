@@ -10,7 +10,7 @@ parenBit("(xy)1") → "(xy)"
 
 def parentBit(s):
     if s[0]==")":
-        return ")"
+        return ((")") if len(s)==1 else (")")+parentBit(s[1:]))
     elif len(s)==1:
         return (")" if s[0]==")" else "")
     else:
