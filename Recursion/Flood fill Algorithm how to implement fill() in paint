@@ -1,0 +1,42 @@
+#Flood fill Algorithm – how to implement fill() in paint?
+'''
+Last Updated: 19-11-2020
+In MS-Paint, when we take the brush to a pixel and click, the color of the region of that pixel is replaced with a new selected color. Following is the problem statement to do this task. 
+Given a 2D screen, location of a pixel in the screen and a color, replace color of the given pixel and all adjacent same colored pixels with the given color.'''
+
+
+
+def FloodFill(n,i,j):
+    if (i<0 or i>len(n)) or (j<0 or j>7):
+        return n
+    if (n[i][j]!=n[i-1][j] and n[i][j]!=n[i+1][j] and n[i][j]!=[i][j-1] and n[i][j]!=n[i][j+1]) and  ((i<0 or i>len(n)) or (j<0 or j>7)):
+        n[i][j]=3
+        return (n)
+    else:
+        temp=n[i][j]
+        if temp==n[i-1][j]:
+            n[i][j]=3
+            return FloodFill(n,i-1,j)
+        if temp==n[i+1][j]:
+            n[i][j]=3
+            return FloodFill(n,i+1,j)
+        if temp==n[i][j-1]:
+            n[i][j]=3
+            return FloodFill(n,i,j-1)
+        if temp==n[i][j+1]:
+            n[i][j]=3
+            return FloodFill(n,i,j+1)
+        
+        
+
+
+n=[[1, 1, 1, 1, 1, 1, 1, 1], 
+          [1, 1, 1, 1, 1, 1, 0, 0], 
+          [1, 0, 0, 1, 1, 0, 1, 1], 
+          [1, 2, 2, 2, 2, 0, 1, 0], 
+          [1, 1, 1, 2, 2, 0, 1, 0], 
+          [1, 1, 1, 2, 2, 2, 2, 0], 
+          [1, 1, 1, 1, 1, 2, 1, 1], 
+          [1, 1, 1, 1, 1, 2, 2, 1]]
+
+print(FloodFill(n,3,3))
