@@ -1,26 +1,31 @@
 #1375. Bulb Switcher III
-light = [4,1,2,3]
+light = [2,1,3,5,4]
 result=[]
 c=0
 l=len(light)
 sum_list = (l*(l+1))//2
 for i in range(len(light)):
     result.append(0)
-print(result)
 for i in light:
     result[i-1] = i
     flag = True
     for j in range(i,0,-1):
-        print("Values",j)
         if j not in result:
             flag = False
-            print("Problem",j)
             break
     if flag == True:
-        if (sum(result[i:]==0) or (sum(result) ==sum_list)):
-            print(result,j,i,result[i:],sum(result[i:]))
+        print("len(result)",len(result))
+        print("Check",result.count(0),(len(result)-i),result,i)
+        if result.count(0)==(len(result)-i-1):
             c+=1
-print(c)
+        '''
+        for k in range(len(result)-1,-1,-1):
+            print(
+            if sum(result[k:-1]) == (((k+1)*(k+2))//2):
+                c+=1
+                break'''
+        
+        
+print(result,c)
         
     
-5*6/2
