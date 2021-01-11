@@ -13,7 +13,10 @@ for i in d:
     if d[i] in s:
         flag = False
         break
+    else:
+        s.add(d[i])
 if flag:
     print(True)
 else:
     print(False)
+print(d,s)
