@@ -21,6 +21,24 @@ class LinkedList:
             return self.head
         k = k%count
         temp = self.head
+        while(k>0):
+            temp = temp.next
+            k-=1
+        #print(temp.data)
+        temp1 = self.head
+        while(temp.next):
+            temp1 = temp1.next
+            temp = temp.next
+        #print(temp.data,temp1.data)
+        temp.next = self.head
+        self.head = temp1.next
+        temp1.next = None
+        return self.head
+        
+        
+
+
+        '''
         while(k>0 and temp is not None and temp.next is not None):
             while(temp.next and temp.next.next is not None):
                 temp = temp.next
@@ -30,7 +48,7 @@ class LinkedList:
             self.head = node
             k-=1
             temp = self.head
-        return self.head
+        return self.head'''
             
 class Node:
     def __init__(self,data):
